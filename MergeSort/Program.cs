@@ -30,20 +30,20 @@ namespace MergeSort
         static void Merge(int[] arr, int start, int mid, int end)
         {
             int i, j, k;
-            int n1 = mid - start + 1;
-            int n2 = end - mid;
-            int[] L = new int[n1];
-            int[] R = new int[n2];
+            int sizeLeft = mid - start + 1;
+            int sizeRight = end - mid;
+            int[] L = new int[sizeLeft];
+            int[] R = new int[sizeRight];
 
-            for (i = 0; i < n1; i++)
+            for (i = 0; i < sizeLeft; i++)
                 L[i] = arr[start + i];
 
-            for (j = 0; j < n2; j++)
+            for (j = 0; j < sizeRight; j++)
                 R[j] = arr[mid + 1 + j];
 
             i = j = 0;
             k = start;
-            while (i < n1 && j < n2)
+            while (i < sizeLeft && j < sizeRight)
             {
                 if (L[i] <= R[j])
                     arr[k++] = L[i++];
@@ -51,10 +51,10 @@ namespace MergeSort
                 else
                     arr[k++] = R[j++];
             }
-            while (i < n1)
+            while (i < sizeLeft)
                 arr[k++] = L[i++];
             
-            while (j < n2)
+            while (j < sizeRight)
                 arr[k++] = R[j++];
         }
 
