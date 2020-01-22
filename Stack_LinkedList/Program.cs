@@ -25,7 +25,7 @@ namespace Stack_LinkedList
 
             if (temp == null)
             {
-                Console.Write("\nHeap Overflow");
+                Console.Write("\nStack Overflow");
                 return;
             }
 
